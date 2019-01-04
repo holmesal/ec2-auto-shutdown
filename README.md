@@ -6,7 +6,7 @@ It will shut down an instance automatically when there is no SSH activity for co
 ## Installation
 
 ```sh
-$ curl -o- https://raw.githubusercontent.com/holmesal/ec2-auto-shutdown/master/install.sh | sudo bash
+curl -o- https://raw.githubusercontent.com/holmesal/ec2-auto-shutdown/master/install.sh | sudo bash
 ```
 
 ## Configuration
@@ -15,6 +15,11 @@ Config file is located at */etc/ec2-auto-shutdown/ec2-auto-shutdown-config*.
 
 Restart service after making changes using:
 ```sh
-$ sudo systemctl restart ec2-auto-shutdown
+sudo systemctl restart ec2-auto-shutdown
 ```
 
+## Logs
+
+```sh
+journalctl -u ec2-auto-shutdown -ef
+```
