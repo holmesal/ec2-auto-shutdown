@@ -8,8 +8,6 @@ fi
 source /etc/ec2-auto-shutdown/ec2-auto-shutdown-config
 shutdown_after=`expr $shutdown_idle_minutes \* 60`
 ssh_max_idle_time=1
-instance_id=`ec2-metadata -i | sed 's/instance-id: \(.*\).$/\1/'`
-region=`ec2-metadata --availability-zone | sed 's/placement: \(.*\).$/\1/'`
 last_activity=`date +%s`
 while true
 do
