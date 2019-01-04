@@ -26,9 +26,11 @@ do
 
   now=`date +%s`
   since_last_activity=`expr $now - $last_activity`
+  echo "${since_last_activity}s since last activity with ${users_connected} users connected"
   if [ "$since_last_activity" -gt "$shutdown_after" ]; then
-    if [ "$idle" ]; then
-      /usr/sbin/shutdown now Shutdown initiated by ec2-auto-shutdown.
+    if [ "$users_connected" -lt "1" ]; then
+      echo "shutting down!"
+      sudo shutdown now "Shutting down due to inactivityyyyyy"
       sleep 60
     fi
   fi
