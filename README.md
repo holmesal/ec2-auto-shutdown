@@ -6,7 +6,7 @@ It will shut down an instance automatically when there is no SSH activity for co
 ## Installation
 
 ```sh
-$ curl -o- https://raw.githubusercontent.com/bokan/ec2-auto-shutdown/master/install.sh | sudo bash
+$ curl -o- https://raw.githubusercontent.com/holmesal/ec2-auto-shutdown/master/install.sh | sudo bash
 ```
 
 ## Configuration
